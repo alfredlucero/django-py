@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install all the packages (you may also use virtual env i.e. venv to be sure you're on Python 3.10.6)
+Install all the packages (you may also use virtual env i.e. venv to be sure you're on Python 3.10.6 - `source django-py/bin/activate` and check `python --version`)
 
 ```bash
 pip install -r requirements.txt
