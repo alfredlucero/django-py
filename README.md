@@ -89,3 +89,15 @@ q.choice_set.create(choice_text='Yes', votes=0)
 # Get all choices for question
 q.choice_set.all()
 ```
+
+## Admin Management
+
+Django automates the creation of admin interfaces for models.
+
+Create a user who can login to the admin site with
+
+```bash
+python manage.py createsuperuser
+```
+
+After running the server with `python manage.py runserver`, go to `localhost:8000/admin/` to see the admin site where you can log in with the user you created.
