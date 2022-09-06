@@ -4,6 +4,7 @@ from django.template import loader
 from django.urls import reverse
 from .models import Choice, Question
 from django.views import generic
+from django.utils import timezone
 
 # Create your views here. Map views to web pages
 # We need to map it to a URL in urls.py (URLconf)
@@ -17,8 +18,9 @@ class IndexView(generic.ListView):
   context_object_name = 'latest_question_list'
 
   def get_queryset(self):
-    """Return the last five published questions."""
-    return Question.objects.order_by('-pub_date')[:5]
+    """Return the last five published questions (not including those set to be published in the future)."""
+    # return Question.objects.order_by('-pub_date')[:5]
+    return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 # Display a detail page for a particular type of object
 # DetailView expects primary key value captured from URL to be called "pk" in urls.py
