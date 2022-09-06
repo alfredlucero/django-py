@@ -90,6 +90,14 @@ q.choice_set.create(choice_text='Yes', votes=0)
 q.choice_set.all()
 ```
 
+## Running tests
+
+We can run our tests like this
+
+```bash
+python manage.py test polls # <app>
+```
+
 ## Admin Management
 
 Django automates the creation of admin interfaces for models.
